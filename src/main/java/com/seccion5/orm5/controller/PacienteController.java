@@ -13,6 +13,9 @@ import com.seccion5.orm5.model.Paciente;
 import com.seccion5.orm5.service.PacienteService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController //decirle que es un apiRest 
@@ -32,5 +35,10 @@ public class PacienteController {
         return new ResponseEntity<>(pacienteService.findAll(),HttpStatus.OK);
     }
     
-
+    @PostMapping
+    public Paciente postPaciente(@RequestBody Paciente Paciente) {
+        return pacienteService.guardarPaciente(Paciente);
+        
+    }
+    
 }

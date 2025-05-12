@@ -12,6 +12,6 @@ public interface PacienteRepository extends JpaRepository<Paciente, Integer >{
     
     List<Paciente> findAll();
     
-
+    Paciente save(Paciente paciente);
 
 }
